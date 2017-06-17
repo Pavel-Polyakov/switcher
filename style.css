@@ -1,0 +1,13 @@
+body {
+    background-color: white;
+}
+#canvas {
+    background-color: white;
+}
+.canvas-block {
+    margin-left: -250px;
+    padding-left: 50%;
+}
+
+
+
