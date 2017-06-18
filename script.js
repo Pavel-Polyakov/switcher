@@ -13,9 +13,17 @@ startGame();
 function startGame() {
     createCells();
     var center = Math.floor(size / 2);
-    cells[center][center].switch();
+    if (size % 2 == 0) {
+        cells[center][center].switch();
+        cells[center - 1][center].switch();
+        cells[center][center - 1].switch();
+        cells[center -1 ][center - 1].switch();
+    } else {
+        cells[center][center].switch();
+    }
     drawAllCells();
 }
+
 
 function cell(row, col) {
     this.value = 0;
