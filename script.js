@@ -30,7 +30,7 @@ function cell(row, col) {
         } else if (this.value == 1) {
             this.value = 0;
         }
-        drawAllCells();
+        drawCell(this);
     }
 }
 
