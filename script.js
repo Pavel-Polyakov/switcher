@@ -2,35 +2,43 @@
  * Created by woolly on 17/06/2017.
  */
 
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
 var size = 2;
-var width = canvas.width / size - 6;
+var board = document.getElementById('board');
+var title = document.getElementById('title');
 var cells = [];
 
 startGame();
 
 function startGame() {
     createCells();
+    title.textContent = 'Level ' + (size - 2).toString();
     var center = Math.floor(size / 2);
     if (size % 2 == 0) {
         cells[center][center].switch();
         cells[center - 1][center].switch();
         cells[center][center - 1].switch();
-        cells[center -1 ][center - 1].switch();
+        cells[center - 1][center - 1].switch();
     } else {
         cells[center][center].switch();
     }
-    drawAllCells();
 }
-
 
 function cell(row, col) {
     this.value = 0;
-    this.x = col * width + 6 * (col + 1);
-    this.y = row * width + 6 * (row + 1);
     this.row = row;
     this.col = col;
+    this.id = 'cell_' + row.toString() + 'x' + col.toString();
+
+    this.html = document.createElement('div');
+    this.html.id = this.id;
+
+    this.setClass = function () {
+        if (this.value == 0) {
+            this.html.className = 'cell cell_0'
+        } else if (this.value == 1) {
+            this.html.className = 'cell cell_1'
+        }
+    };
 
     this.switch = function () {
         if (this.value == 0) {
@@ -38,72 +46,30 @@ function cell(row, col) {
         } else if (this.value == 1) {
             this.value = 0;
         }
-        drawCell(this);
-    }
+        this.setClass();
+    };
+
+
+    this.setClass();
+
+    this.html.addEventListener('click', function (event) {
+        cells[row][col].switch();
+        switchNeighbors(cells[row][col]);
+        checkForFinish();
+    }, false);
 }
 
 function createCells() {
     for (var i = 0; i < size; i++) {
         cells[i] = [];
+        var row = document.createElement('div');
+        row.className = 'cell-row';
+        row.id = 'row_' + i.toString();
+        board.append(row);
         for (var j = 0; j < size; j++) {
-            cells[i][j] = new cell(i, j);
-        }
-    }
-}
-
-function drawCell(cell) {
-    ctx.beginPath();
-    ctx.rect(cell.x, cell.y, width, width);
-
-    switch (cell.value) {
-        case 0:
-            ctx.fillStyle = "#0B9BA9";
-            break;
-        case 1:
-            ctx.fillStyle = "#F46D78";
-            break;
-        default:
-            ctx.fillStyle = "#FFFFFF";
-            break;
-    }
-    ctx.fill();
-}
-
-function drawAllCells() {
-    for (var i = 0; i < size; i++) {
-        for (var j = 0; j < size; j++) {
-            drawCell(cells[i][j]);
-        }
-    }
-}
-
-canvas.addEventListener('click', function (event) {
-    var xY = getCursorPosition(canvas, event);
-    var cell = getCellByXY(xY);
-
-    if (cell) {
-        cell.switch();
-        switchNeighbors(cell);
-        checkForFinish();
-    }
-}, false);
-
-function getCursorPosition(canvas, event) {
-    var rect = canvas.getBoundingClientRect();
-    var x = event.clientX - rect.left;
-    var y = event.clientY - rect.top;
-    return {x: x, y: y};
-}
-
-function getCellByXY(xY) {
-    var x = xY.x;
-    var y = xY.y;
-    for (var i = 0; i < size; i++) {
-        for (var j = 0; j < size; j++) {
-            var cell = cells[i][j];
-            if ((x > cell.x && y > cell.y) && (x < (cell.x + width)) && y < (cell.y + width)) {
-                return cell;
-            }
+            var cell_object = new cell(i, j);
+            cells[i][j] = cell_object;
+            row.append(cell_object.html);
         }
     }
 }
@@ -139,17 +105,12 @@ function checkForFinish() {
     }
 }
 
-function canvasClear() {
-    ctx.clearRect(0, 0, 500, 500);
-}
-
 function finishGame() {
-    canvas.style.opacity = '0.5';
+    board.style.opacity = "0.5";
     setTimeout(function () {
         size += 1;
-        width = canvas.width / size - 6;
-        canvasClear();
+        board.innerHTML = '';
         startGame();
-        canvas.style.opacity = '1';
+        board.style.opacity = "1";
     }, 500);
 }

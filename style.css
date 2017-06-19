@@ -1,13 +1,43 @@
 body {
     background-color: white;
-}
-#canvas {
-    background-color: white;
-}
-.canvas-block {
-    margin-left: -250px;
-    padding-left: 50%;
+    font-size: medium;
 }
 
+.text {
+    text-align: center;
+    font-size: 16pt;
+}
 
+.board {
+    width: 500pt;
+    height: 500pt;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 5pt;
+    margin: 0 auto;
+}
 
+.cell {
+    display: table-cell;
+    transition: all 0.1s ease;
+}
+
+.cell:hover {
+    opacity: 0.9;
+}
+
+.cell-row {
+    display: table-row;
+}
+
+.cell_0 {
+    background-color: #0B9BA9;
+}
+
+.cell_1 {
+    background-color: #F46D78;
+
+    -webkit-box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.05);
+}
