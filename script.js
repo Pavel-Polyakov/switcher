@@ -5,9 +5,21 @@
 var size = 2;
 var board = document.getElementById('board');
 var title = document.getElementById('title');
+var clicks = document.getElementById('clicks');
+var reset = document.getElementById('reset');
 var cells = [];
 
+var clicks_count = 0;
+
 startGame();
+
+
+reset.addEventListener('click', function (event) {
+    size = 1;
+    clicks_count = 0;
+    clicks.innerText = clicks_count.toString();
+    finishGame();
+}, false);
 
 function startGame() {
     createCells();
@@ -49,10 +61,11 @@ function cell(row, col) {
         this.setClass();
     };
 
-
     this.setClass();
 
     this.html.addEventListener('click', function (event) {
+        clicks_count ++;
+        clicks.innerText = clicks_count.toString();
         cells[row][col].switch();
         switchNeighbors(cells[row][col]);
         checkForFinish();
