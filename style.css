@@ -5,25 +5,19 @@ body {
 
 .text {
     text-align: center;
-    font-size: 16pt;
 }
 
 .board {
-    width: 500pt;
-    height: 500pt;
+    height: 50vw;
+    width: 50vw;
     display: table;
     border-collapse: separate;
-    border-spacing: 5pt;
+    border-spacing: 1vw;
     margin: 0 auto;
 }
 
 .cell {
     display: table-cell;
-    transition: all 0.1s ease;
-}
-
-.cell:hover {
-    opacity: 0.9;
 }
 
 .cell-row {
@@ -36,8 +30,4 @@ body {
 
 .cell_1 {
     background-color: #F46D78;
-
-    -webkit-box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.05);
-    box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.05);
 }
