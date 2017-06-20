@@ -1,11 +1,18 @@
-body {
-    background-color: white;
-    font-size: medium;
+* {
+    background-color: #EDECF4;
+    color: #3d4849;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     -moz-user-select: none; /* Mozilla Firefox */
     -ms-user-select: none; /* Internet Explorer */
     -o-user-select: none; /* Opera Presto */
     -webkit-user-select: none; /* Google Chrome, Opera Next, Safari */
+    text-align: center;
+
+    /*line-height: 90%;*/
+}
+
+body {
+    font-size: medium;
 }
 
 .board {
@@ -19,13 +26,7 @@ body {
 
 @media only screen and (max-device-width: 480px) {
     body {
-        background-color: white;
-        font-size: xx-large;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        -moz-user-select: none; /* Mozilla Firefox */
-        -ms-user-select: none; /* Internet Explorer */
-        -o-user-select: none; /* Opera Presto */
-        -webkit-user-select: none; /* Google Chrome, Opera Next, Safari */
+        font-size: large;
     }
 
     .board {
@@ -39,13 +40,9 @@ body {
 }
 
 h1 {
-    text-align: center;
+    margin-bottom: -10pt;
 }
 
-p {
-    text-align: center;
-    margin-top: -15pt;
-}
 
 a:hover {
     border-bottom: #696969 solid 2px !important;
@@ -64,17 +61,19 @@ a:active {
 }
 
 .cell_0 {
-    background-color: #066FA5;
+    background-color: #06a7f3;
+    border: 5px solid #06679b;
 }
 
 .cell_1 {
-    background-color: #F70044;
+    background-color: #ff6984;
+    border: 5px solid #ed0042;
 }
 
 .cell_0:active {
-    background: #054b6e;
+    filter: brightness(80%);
 }
 
 .cell_1:active {
-    background: #c20037;
+    filter: brightness(80%);
 }
