@@ -1,0 +1,80 @@
+body {
+    background-color: white;
+    font-size: medium;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -moz-user-select: none; /* Mozilla Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -o-user-select: none; /* Opera Presto */
+    -webkit-user-select: none; /* Google Chrome, Opera Next, Safari */
+}
+
+.board {
+    height: 43vw;
+    width: 43vw;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 1vw;
+    margin: 0 auto;
+}
+
+@media only screen and (max-device-width: 480px) {
+    body {
+        background-color: white;
+        font-size: xx-large;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        -moz-user-select: none; /* Mozilla Firefox */
+        -ms-user-select: none; /* Internet Explorer */
+        -o-user-select: none; /* Opera Presto */
+        -webkit-user-select: none; /* Google Chrome, Opera Next, Safari */
+    }
+
+    .board {
+        height: 70vw;
+        width: 70vw;
+        display: table;
+        border-collapse: separate;
+        border-spacing: 2vw;
+        margin: 0 auto;
+    }
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin-top: -15pt;
+}
+
+a:hover {
+    border-bottom: #696969 solid 2px !important;
+}
+
+a:active {
+    opacity: 0.5;
+}
+
+.cell {
+    display: table-cell;
+}
+
+.cell-row {
+    display: table-row;
+}
+
+.cell_0 {
+    background-color: #066FA5;
+}
+
+.cell_1 {
+    background-color: #F70044;
+}
+
+.cell_0:active {
+    background: #054b6e;
+}
+
+.cell_1:active {
+    background: #c20037;
+}
