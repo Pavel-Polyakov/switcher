@@ -2,6 +2,10 @@ body {
     background-color: white;
     font-size: medium;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    -moz-user-select: none; /* Mozilla Firefox */
+    -ms-user-select: none; /* Internet Explorer */
+    -o-user-select: none; /* Opera Presto */
+    -webkit-user-select: none; /* Google Chrome, Opera Next, Safari */
 }
 
 .board {
@@ -18,6 +22,10 @@ body {
         background-color: white;
         font-size: xx-large;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        -moz-user-select: none; /* Mozilla Firefox */
+        -ms-user-select: none; /* Internet Explorer */
+        -o-user-select: none; /* Opera Presto */
+        -webkit-user-select: none; /* Google Chrome, Opera Next, Safari */
     }
 
     .board {
