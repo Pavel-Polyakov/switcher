@@ -127,3 +127,5 @@ function finishGame() {
         board.style.opacity = "1";
     }, 500);
 }
+
+FastClick.attach(document.body);

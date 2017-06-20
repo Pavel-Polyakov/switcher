@@ -1,0 +1,14 @@
+{
+  "name": "switcher",
+  "homepage": "https://github.com/Pavel-Polyakov/switcher",
+  "authors": [
+    "Paul_Fieldman <polyakov.pavel.xyz@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fastclick": "^1.0.6"
+  }
+}
