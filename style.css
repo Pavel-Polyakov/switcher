@@ -1,15 +1,16 @@
 * {
-    background-color: #004c70;
-    color: #EDECF4;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #006999;
     -moz-user-select: none; /* Mozilla Firefox */
     -ms-user-select: none; /* Internet Explorer */
     -webkit-user-select: none; /* Google Chrome, Opera Next, Safari */
-    text-align: center;
+
 }
 
-body {
+.text {
     font-size: medium;
+    text-align: center;
+    color: #EDECF4;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .board {
@@ -23,7 +24,7 @@ body {
 }
 
 @media only screen and (max-device-width: 480px) {
-    body {
+    .text {
         font-size: large;
     }
     .board {
@@ -38,6 +39,11 @@ body {
 
 h1 {
     margin-bottom: -10pt;
+    text-shadow: 1px 1px 2px #003d59;
+}
+
+b {
+    text-shadow: 1px 1px 2px #003d59;
 }
 
 

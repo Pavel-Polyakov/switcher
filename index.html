@@ -9,18 +9,24 @@
 </head>
 <body>
     <div>
-        <h1 id="title">Level #</h1>
-        <p>
-            <b><span id="clicks">#</span></b> clicks
+        <div class="text">
+            <h1 id="title">Level #</h1>
+        </div>
+
+        <p class="text">
+            <b><span id="clicks">#</span></b> moves
         </p>
+
         <div id="board" class="board"></div>
 
-        <p>Your goal is to turn all cells into blue color<br>using minimum number of clicks.</p>
-        <p>
-            to restart press
-            <a><span id="reset_level"><b>level</b></span></a>
-            or <a><span id="reset_game"><b>game</b></span></a>
-        </p>
+        <div id="info" class="text">
+            <p>Your goal is to turn on the cells<br>using minimum number of moves.</p>
+            <p>
+                to restart press
+                <a><span id="reset_level"><b>level</b></span></a>
+                or <a><span id="reset_game"><b>game</b></span></a>
+            </p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
