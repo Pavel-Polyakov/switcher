@@ -6,35 +6,21 @@
 }
 
 .text {
-    font-size: medium;
+    font-size: large;
     text-align: center;
     color: #EDECF4;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .board {
-    height: 38vw;
-    width: 38vw;
+    height: 80vw;
+    width: 80vw;
     display: table;
     border-collapse: separate;
-    border-spacing: 1vw;
+    border-spacing: 2vw;
     margin: 0 auto;
-
 }
 
-@media only screen and (max-device-width: 480px) {
-    .text {
-        font-size: large;
-    }
-    .board {
-        height: 80vw;
-        width: 80vw;
-        display: table;
-        border-collapse: separate;
-        border-spacing: 2vw;
-        margin: 0 auto;
-    }
-}
 
 h1 {
     margin-bottom: -0.5em;
