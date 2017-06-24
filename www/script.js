@@ -6,23 +6,36 @@ var size = 2;
 var board = document.getElementById('board');
 var title = document.getElementById('title');
 var clicks = document.getElementById('clicks');
-var reset = document.getElementById('reset');
+var reset_game = document.getElementById('reset_game');
+var reset_level = document.getElementById('reset_level');
 var cells = [];
 
-var clicks_count = 0;
+var clicks_count_game = 0;
+var clicks_count_level = 0;
 
 startGame();
 
 
-reset.addEventListener('click', function (event) {
+reset_game.addEventListener('click', function (event) {
     size = 1;
-    clicks_count = 0;
-    clicks.innerText = clicks_count.toString();
+    clicks_count_game = 0;
     finishGame();
 }, false);
 
+
+reset_level.addEventListener('click', function (event) {
+    size --;
+    clicks_count_game -= clicks_count_level;
+    finishGame();
+
+}, false);
+
+
+
 function startGame() {
     createCells();
+
+    clicks.innerText = clicks_count_game.toString();
     title.textContent = 'Level ' + (size - 2).toString();
     var center = Math.floor(size / 2);
     if (size % 2 == 0) {
@@ -64,8 +77,9 @@ function cell(row, col) {
     this.setClass();
 
     this.html.addEventListener('click', function (event) {
-        clicks_count ++;
-        clicks.innerText = clicks_count.toString();
+        clicks_count_game ++;
+        clicks_count_level ++;
+        clicks.innerText = clicks_count_game.toString();
         cells[row][col].switch();
         switchNeighbors(cells[row][col]);
         checkForFinish();
@@ -119,6 +133,7 @@ function checkForFinish() {
 }
 
 function finishGame() {
+    clicks_count_level = 0;
     board.style.opacity = "0.5";
     setTimeout(function () {
         size += 1;
