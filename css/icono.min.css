@@ -1,0 +1,60 @@
+.icono-reset {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-left-color: transparent;
+    margin: 4px
+}
+
+.icono-reset:before {
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -7px;
+    bottom: 0;
+    border-width: 6px;
+    border-style: solid;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg)
+}
+
+
+[class*=icono-] {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    font-style: normal;
+    color: #ddd;
+    text-align: left;
+    text-indent: -9999px;
+    direction: ltr
+}
+
+[class*=icono-]:after, [class*=icono-]:before {
+    content: '';
+    pointer-events: none
+}
+
+[class*=icono-][class*=Circle] {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 2px
+}
+
+[class*=icono-][class*=Square] {
+    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    margin: 2px
+}
+
+[class*=icono-], [class*=icono-] * {
+    box-sizing: border-box
+}

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type='application/javascript' src='bower_components/fastclick/lib/fastclick.js'></script>
-    <link href="style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/icono.min.css" rel="stylesheet">
     <title>Switcher</title>
 </head>
 <body>
@@ -13,21 +14,32 @@
             <h1 id="title">Level #</h1>
         </div>
 
-        <p class="text">
+        <div class="text">
             <b><span id="clicks">#</span></b> moves
-        </p>
+        </div>
 
-        <div id="board" class="board"></div>
 
-        <div id="info" class="text">
-            <p>Your goal is to turn on the cells<br>using minimum number of moves.</p>
-            <p>
-                to restart press
-                <a><span id="reset_level"><b>level</b></span></a>
-                or <a><span id="reset_game"><b>game</b></span></a>
-            </p>
+        <div id="board" class="board">
+        </div>
+
+        <div id="control-panel" class="text">
+            <span id="button_reset" class="icono-reset"></span>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <div id="afterword" class="modal">
+        <div class="modal-content">
+            <div class="text">
+                <h3>Thanks for playing!</h3>
+                <p>It was not so easy but you coped. Cool!</p>
+                <p>Start <b id="button_restart_game">again</b>?</p>
+            </div>
+        </div>
+    </div>
+
+<script src="js/engine.js"></script>
+<script src="js/game.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/init.js"></script>
 </body>
 </html>
